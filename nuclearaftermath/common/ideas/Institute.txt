@@ -1,0 +1,36 @@
+ideas = {
+	country = {
+
+		slaver_society = {
+
+      allowed = {
+
+        always = no
+
+      }
+
+      allowed_civil_war = {
+
+        always = yes
+
+      }
+
+      removal_cost = -1
+
+      modifier = {
+
+
+        conscription = 0.01
+
+        }
+      rule = {
+
+        can_create_faction = yes
+
+      }
+
+    }
+
+	}
+
+}

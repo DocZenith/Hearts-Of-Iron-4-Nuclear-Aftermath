@@ -1,0 +1,25 @@
+state={
+	id=748
+	name="STATE_748"
+	provinces={
+		4799 11814
+	}
+	manpower=600000
+	history={
+
+		owner = CSL
+		victory_points = {
+
+			4799 40
+
+		}
+		buildings = {
+
+			infrastructure = 3
+
+		}
+		add_core_of = CSL
+
+	}
+	buildings_max_level_factor=1.000
+}

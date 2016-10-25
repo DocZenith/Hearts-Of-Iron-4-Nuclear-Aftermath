@@ -1,0 +1,92 @@
+add_namespace = DamandHooverDam
+
+# Ask for dam
+country_event = {
+	id = DamandHooverDam.1
+	title = DamandHooverDam.1.t
+	desc = DamandHooverDam.1.d
+	picture = GFX_event_test
+
+	is_triggered_only = yes
+
+
+  trigger = {
+
+
+  }
+
+
+	option = {
+			name = DamandHooverDam.1.a
+			ai_chance = { factor = 100}
+      if {
+        NCR = {
+
+          country_event = { id = DamandHooverDam.2 }
+
+          }
+      }
+	}
+  option = {
+
+    name = DamandHooverDam.1.b
+    ai_chance = {factor = 0}
+    if {
+
+      NCR = {
+
+        country_event = { id = DamandHooverDam.3 }
+
+      }
+    }
+
+    }
+
+  }
+
+#Caesar Refuses
+country_event = {
+	id = DamandHooverDam.2
+	title = DamandHooverDam.2.t
+	desc = DamandHooverDam.2.d
+	picture = GFX_event_test
+
+	is_triggered_only = yes
+
+
+  trigger = {
+
+
+  }
+
+
+	option = {
+			name = DamandHooverDam.2.a
+			ai_chance = { factor = 100 }
+	}
+
+}
+
+#NCR takes the Hoover Dam
+country_event = {
+	id = DamandHooverDam.3
+	title = DamandHooverDam.3.t
+	desc = DamandHooverDam.3.d
+	picture = GFX_event_test
+
+	is_triggered_only = yes
+
+
+  trigger = {
+
+
+  }
+
+
+	option = {
+			name = DamandHooverDam.3.a
+			ai_chance = { factor = 100 }
+			NCR = { transfer_state = 748 }
+	}
+
+}

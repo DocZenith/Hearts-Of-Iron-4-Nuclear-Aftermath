@@ -1,0 +1,267 @@
+focus_tree = {
+	id = ncr_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag =NCR
+		}
+
+		modifier = {
+			add = 10
+			original_tag = NCR
+		}
+	}
+
+	default = no
+
+	#Hoover Dam tree
+	focus = {
+		id = NCR_Western_Intervention
+		icon = GFX_goal_generic_national_unity
+		available = {
+
+		}
+		x = 2
+		y = 0
+		cost =0
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+		}
+
+
+
+	}
+
+	focus = {
+		id = NCR_Improve_Relations_With_The_Legion
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = NCR_Western_Intervention }
+		mutually_exclusive = { focus =NCR_War_Preperations }
+		available = {
+
+		}
+		x = 3
+		y = 1
+		cost = 0
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+
+			CSL= { add_opinion_modifier = { target = NCR modifier = small_increase} }
+
+
+		}
+
+
+
+	}
+
+	focus = {
+		id = NCR_War_Preperations
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = NCR_Western_Intervention }
+		mutually_exclusive = { focus = NCR_Improve_Relations_With_The_Legion }
+		available = {
+
+		}
+		x = 1
+		y = 1
+		cost = 0
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			CSL= { add_opinion_modifier = { target = NCR modifier = large_decrease} }
+			379 = {
+				if{
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = bunker
+							province = 10591
+							level = 2
+							instant_biuld = yes
+						}
+						add_building_construction = {
+							type = bunker
+							province = 7756
+							level = 2
+							instant_biuld = yes
+						}
+						add_building_construction = {
+							type = bunker
+							province = 7879
+							level = 2
+							instant_biuld = yes
+						}
+						add_building_construction = {
+							type = bunker
+							province = 12425
+							level = 2
+							instant_biuld = yes
+						}
+					}
+			}
+			378 = {
+
+				if{
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = bunker
+							province = 1651
+							level = 2
+							instant_biuld = yes
+						}
+						add_building_construction = {
+							type = bunker
+							province = 4657
+							level = 2
+							instant_biuld = yes
+						}
+						add_building_construction = {
+							type = bunker
+							province = 4727
+							level = 2
+							instant_biuld = yes
+						}
+						add_building_construction = {
+							type = bunker
+							province = 7986
+							level = 2
+							instant_biuld = yes
+						}
+
+			}
+
+		}
+	}
+	}
+
+	focus = {
+		id = NCR_Damand_Hoover_Dam
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = NCR_War_Preperations }
+		available = {
+
+		}
+		x = 1
+		y = 2
+		cost = 0
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			CSL = {
+
+				country_event = { id = DamandHooverDam.1 }
+
+			}
+
+		}
+	}
+
+	focus = {
+		id = NCR_Ask_For_Hoover_Dam
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = NCR_Improve_Relations_With_The_Legion }
+		available = {
+
+		}
+		x = 3
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+		CSL = {
+
+			country_event = { id = DamandHooverDam.1 }
+
+		}
+
+		}
+	}
+
+	focus = {
+		id = NCR_War_With_Caesars_Legion
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = NCR_Damand_Hoover_Dam focus = NCR_Ask_For_Hoover_Dam}
+		available = {
+
+			not = {has_war_with = CSL}
+
+		}
+		x = 1
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+		create_wargoal = {
+			type = annex_everything
+			target = CSL
+		}
+
+		}
+	}
+
+	focus = {
+		id = NCR_Alliance_With_CSL
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = NCR_Ask_For_Hoover_Dam }
+		available = {
+
+			not = {has_war_with = CSL}
+
+		}
+		x = 3
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			create_faction = "Hoover Alliance"
+			add_to_faction = CSL
+
+		}
+	}
+
+
+
+}

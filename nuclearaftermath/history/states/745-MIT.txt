@@ -1,0 +1,33 @@
+state={
+	id=745
+	name="STATE_745"
+        state_category = metropolis
+	buildings_max_level_factor=1.000
+	provinces={
+		3712 
+	}
+	manpower=600000
+	history={
+		owner = IST
+		victory_points = {
+			3906 40
+		}
+		buildings = {
+			infrastructure = 10
+			industrial_complex = 2
+			arms_factory = 5
+			air_base = 1
+			anti_air_building = 3
+			air_base = 1
+			radar_station = 1
+			3906 = {
+				naval_base = 1
+				bunker = 10
+				coastal_bunker = 1
+
+			}
+		}
+		add_core_of = IST
+
+	}
+}

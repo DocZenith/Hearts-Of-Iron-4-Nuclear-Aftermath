@@ -1,0 +1,33 @@
+state={
+	id=744
+	name="STATE_744"
+  	state_category = metropolis
+	buildings_max_level_factor=1.000
+	provinces={
+		3906
+	}
+	manpower=600000
+	history={
+		owner = MTM
+		victory_points = {
+			3906 40
+		}
+		buildings = {
+			infrastructure = 10
+			industrial_complex = 2
+			arms_factory = 3
+			air_base = 1
+			anti_air_building = 3
+			air_base = 1
+			radar_station = 1
+			3906 = {
+				naval_base = 1
+				bunker = 10
+				coastal_bunker = 10
+
+			}
+		}
+		add_core_of = MTM
+
+	}
+}

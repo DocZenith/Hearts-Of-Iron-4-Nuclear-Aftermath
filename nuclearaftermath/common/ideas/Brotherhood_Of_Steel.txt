@@ -1,0 +1,66 @@
+ideas = {
+	country = {
+
+		ad_victoriam = {
+
+			allowed = {
+
+				always = no
+
+			}
+
+			allowed_civil_war = {
+
+				always = yes
+
+			}
+
+			removal_cost = -1
+
+			modifier = {
+
+				unity_factor = 0.20
+				conscription = 0.005
+				planning_speed = 0.25
+
+			}
+			rule = {
+
+				can_create_faction = yes
+
+			}
+
+		}
+
+		pre_war_tech = {
+
+			allowed = {
+
+				always = no
+
+			}
+
+			allowed_civil_war = {
+
+				always = yes
+
+			}
+
+			removal_cost = -1
+
+			modifier = {
+
+				research_time_factor = -0.40
+
+			}
+			rule = {
+
+				can_create_faction = yes
+
+			}
+
+		}
+
+	}
+
+}
